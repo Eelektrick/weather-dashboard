@@ -1,0 +1,12 @@
+#title1{
+    font-size: 22px;
+}
+
+#city-name{
+    height: 38px;
+    width: 250px;
+}
+
+.history-list{
+    list-style-type: none;
+}
