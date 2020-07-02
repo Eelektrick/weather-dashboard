@@ -10,3 +10,64 @@
 .history-list{
     list-style-type: none;
 }
+
+body {
+    background-color: #d9dcd6 
+}
+.h1 {
+    font-size: 30px;
+}
+.col-3 {
+    font-family: 'Courier New', Courier, monospace;
+}
+.col-9 {
+    max-width: 90%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px; 
+    box-shadow: 0 0 20px; 
+    font-family: 'Courier New', Courier, monospace ;
+    font-size: 20px;
+}
+
+#city {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+
+.green {
+    background-color: green;
+    font-size: 25px;
+    color: white;
+}
+.yellow {
+    background-color: yellow;
+    font-size: 25px;
+    color: black;
+}
+.red {
+    background-color: red;
+    font-size: 25px;
+    color: white;
+}
+
+h2 {text-align: center;}
+
+.timeCard {
+    background-color: steelblue;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    border-radius: 5px;
+    box-shadow: 0 0 20px;
+    font-family: 'Courier New', Courier, monospace ;
+}

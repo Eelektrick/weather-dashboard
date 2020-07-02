@@ -66,7 +66,7 @@ $(document).ready(function(){
     //run ajax call
     $.ajax({
         url: queryURL,
-        method:"GET"
+        method: "GET"
     })
 
     // We store all of the retrieved data inside of an object called "response"
