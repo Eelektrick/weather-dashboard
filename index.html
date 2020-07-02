@@ -34,20 +34,19 @@
             <form class="form-inline">
               <div class="form mb-2">
                 <label for="city-name" class="font-weight-bold" id="title1">Search for a City:</label>
-                <input type="text" id="city-name" placeholder="Enter City Name">
+                <input type="text" id="city-name" placeholder="Enter City Name" onfocus="this.value=''">
                 <button class="btn btn-info search-button" type="submit" id="submit">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
             </form>
           </div>
-        </div>
-        <!-- list of previous search cities -->
-        <div class="search-history">
-          <ol class="list-group history-list">
-            <li class="list-group-item-active" id="history-city"></li>
-            <!-- if li doesnt work use <p id="history-city"></p> -->
-          </ol>
+          <!-- list of previous search cities -->
+          <div class="search-history">
+            <ul class="list-group">
+              <li class="list-group-item" id="history-city"></li>
+            </ul>
+          </div>
         </div>
         <!-- Current day output -->
         <div class="col-9 p-4">
