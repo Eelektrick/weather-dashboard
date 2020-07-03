@@ -4,6 +4,7 @@ $(document).ready(function(){
     var todayDate = moment().format("dddd, MMMM Do");
     var year = moment().format("YYYY");
 
+    //show date from moment.js on the html
     $(".date").html("(" + todayDate + " " + year + ")");
     showStorage();
 
@@ -23,6 +24,30 @@ $(document).ready(function(){
         
         showWeather(false)
     });
+
+    //function for search history for cities
+    function showStorage(){
+        $(".list-group").empty();
+        //get search city history from locale storage
+        cityHistory = JSON.parse(localStorage.getItem("cityHistory"));
+
+        if(!cityHistory){
+            //If there is no history start with a default city
+            cityHistory = ["Salt lake city"];
+            localStorage.setItem("cityHistory", JSON.stringify(cityHistory));
+        }
+
+        //create loop to make list of cities previously searched from local storage
+        location = cityHistory[cityHistory.length-1];
+        showWeather(false);
+
+        //create for loop to take info from locale storage and display on the list
+        for(i=0; i<cityHistory.length; i++){
+            var newLi = $("<li>").text(cityHistory[i]);
+            newLi.addClass("list-group-item");
+            $(".list-group").append(newLi);
+        }
+    }
 
     //function to prevent buttons replicating with the new information
     function showWeather(saveHistory){
@@ -82,6 +107,7 @@ $(document).ready(function(){
                 method: "GET"
             }) 
 
+            // We store all of the retrieved data inside of an object called "response"
             .then(function(response){
                 //add uvi index to html
                 var uv = response.current.uvi;
@@ -89,7 +115,7 @@ $(document).ready(function(){
                 console.log(uv);
                 $("#uv-text").text(uv);
 
-                //We now colorcode the index
+                //now colorcode the index
                 if (uv < 3){
                 $("#uv-text").addClass("green")
                 }
@@ -105,7 +131,7 @@ $(document).ready(function(){
                 var forecastH2 = $("<h2>").text("Five Day Forecast");
                 $(".forecast").append(forecastH2)
 
-                //use a forloop to create a forecast of the next five days
+                //use a for loop to create a forecast of the next five days
                 for (i = 1; i < 6; i++ ){
                 var timeStamp = response.daily[i].dt * 1000;
 
@@ -138,25 +164,5 @@ $(document).ready(function(){
                 }
             });
         });
-    }
-    function showStorage(){
-        $(".list-group").empty();
-        //get search city history from locale storage
-        cityHistory = JSON.parse(localStorage.getItem("cityHistory"));
-
-        if(!cityHistory){
-            //If there is no history start with a default city
-            cityHistory = ["Salt lake city"];
-            localStorage.setItem("cityHistory", JSON.stringify(cityHistory));
-        }
-        //create loop to make list of cities previously searched from local storage
-        location = cityHistory[cityHistory.length-1];
-        showWeather(false);
-        //create for loop to take info from locale storage and display on the list
-        for(i=0; i<cityHistory.length; i++){
-            var newLi = $("<li>").text(cityHistory[i]);
-            newLi.addClass("list-group-item");
-            $(".list-group").append(newLi);
-        }
     }
 });
