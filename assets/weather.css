@@ -2,6 +2,10 @@
     font-size: 25px;
 }
 
+#page-header{
+    width: 100%;
+}
+
 #city-name{
     height: 37px;
 }
@@ -20,7 +24,11 @@
 }
 
 body {
-    background-color: lightgray; 
+    background-image: url(./images/weather.jpg); 
+}
+
+#elite{
+    background: lightgray;
 }
 
 .col-3 {

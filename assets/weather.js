@@ -9,18 +9,26 @@ $(document).ready(function(){
     showStorage();
 
     //click event when search button is clicked
-    $(".search-button").click(function(){
+    $(".search-button").click(function(event){
         event.preventDefault();
 
         location = $("#city-name").val();
         cityHistory.push(location);
+
+        if(cityHistory.length > 8){
+            cityHistory.shift()
+        }
         showWeather(true);
+        window.location.reload();
     });
 
     //click event if you click on the history list to re look at past city searched
     $("li").click(function(){
         location = $(this).text();
-        cityHistory.push(location);
+
+        if(cityHistory.length > 8){
+            cityHistory.shift()
+        }
         
         showWeather(false)
     });
