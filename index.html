@@ -20,56 +20,52 @@
     <title>Weather Dashboard</title>
   </head>
   <body>
-    <header class="jumbotron-fluid text-white bg-dark text-center p-3">
-      <div class="container-fluid">
-        <h1>Weather Dashboard</h1>
-      </div>
+    <header id="page-header" class="container-fluid w-100 text-white bg-dark text-center pt-3 pb-3">
+      <h1>Weather Dashboard</h1>
     </header>
     <!-- layout of the dashboard -->
     <div class="container-fluid">
-      <div class="row m-2">
-        <div class="col-3">
-          <div class="row">
-            <!-- form to fill out to search for a city and submit button-->
-            <form class="form-inline">
-              <div class="form mb-2">
-                <label for="city-name" class="font-weight-bold" id="title1">Search for a City:</label>
-                <input type="text" id="city-name" placeholder="Enter City Name" onfocus="this.value=''">
-                <button class="btn btn-info search-button" type="submit" id="submit">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </form>
+
+      <!-- <div class="row m-2"> -->
+        <section id="searchCol" class="">
+          <div class="search-div mb-4">
+            <h5 class="justify-content-center font-weight bold pt-2 pl-3" id="title1" for="city-name">Search by City</h5>
+            <!-- form to fill out to search for a city and submit button -->
+            <div class="">
+              <input class="float-left mr-2" type="text" id="city-name" placeholder="Search">
+              <button class="btn btn-info btn-outline-light search-button" type="submit" id="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
           </div>
           <!-- list of previous search cities -->
-          <div class="search-history">
+          <h5 class="justify-content-center pt-2 pl-3">Searched Cities: </h5>
+          <div class="my-3 col-12 search-history" id="history-city" type="text">
             <ul class="list-group">
               <li class="list-group-item" id="history-city"></li>
             </ul>
           </div>
-        </div>
+        </section>
         <!-- Current day output -->
-        <div class="col-9 p-3">
-          <div class="row weather-output"> 
-              <div class="city" id="city"></div>
-              <div class="date"></div>
+        <div class="col-9 pt-3 mb-2 justify-content-center">
+          <div class="weather-output"> 
+            <div class="city" id="city"></div>
+            <div class="date"></div>
               <img class="weather-image"></img>
           </div>
-          <div class="row tempF"></div>
-          <div class="row humidity"></div>
-          <div class="row wind"></div>
-          <div class="row uv">
-            <span id="uv-container"></span><span id="uv-text"></span>
+            <div class="pl-3 row tempF"></div>
+            <div class="pl-3 row humidity"></div>
+            <div class="pl-3 row wind"></div>
+            <div class="pl-3 row uv">
+              <span id="pl-3 uv-container"></span><span id="uv-text"></span>
+            </div>
+          <!-- </div> -->
+          <div class="row justify-content-center">
+            <div class="col-9 forecast">
+            </div>
           </div>
-          <!--Forecast row-->
         </div>
-      </div>
-      <div class="row m-2 justify-content-end">
-        <div class="col-9 p-4 forecast">
-        </div>
-      </div>
-    </div>
-      
+    </div>      
     <!-- Optional JavaScript -->
     <script src="assets/weather.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

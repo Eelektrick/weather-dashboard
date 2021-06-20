@@ -3,12 +3,20 @@
 }
 
 #city-name{
-    height: 38px;
-    width: 250px;
+    height: 37px;
+}
+
+#searchCol{
+    margin: 35px;
+}
+
+#history-city{
+    width: 50%;
 }
 
 .list-group{
     list-style-type: none;
+    /* width: 50%; */
 }
 
 body {
@@ -19,7 +27,8 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .col-9 {
-    max-width: 90%;
+    max-width: 100%;
+    align-items: center;
     background-color: white;
     border-radius: 5px;
     padding: 10px; 
